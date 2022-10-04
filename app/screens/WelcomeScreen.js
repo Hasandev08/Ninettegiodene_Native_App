@@ -1,0 +1,41 @@
+import React from "react";
+import { ImageBackground, Image, StyleSheet, Text } from "react-native";
+
+import NextButton from "../components/NextButton";
+
+import colors from "../config/colors";
+
+function WelcomeScreen(props) {
+  return (
+    <ImageBackground
+      style={styles.background}
+      source={require("../assets/background.jpg")}
+    >
+      <Image style={styles.icon} source={require("../assets/logo.png")} />
+      <Text style={styles.tagline}>Let's find your{"\n"}dream house!</Text>
+      <NextButton />
+    </ImageBackground>
+  );
+}
+
+const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    justifyContent: "flex-start",
+    alignItems: "center",
+  },
+  icon: {
+    width: 230,
+    height: 230,
+    marginTop: 20,
+  },
+  tagline: {
+    color: colors.dark,
+    fontSize: 28,
+    fontWeight: "bold",
+    marginLeft: 10,
+    marginBottom: 310,
+  },
+});
+
+export default WelcomeScreen;
