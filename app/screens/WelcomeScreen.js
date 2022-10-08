@@ -1,5 +1,6 @@
 import React from "react";
 import { ImageBackground, Image, StyleSheet, Text } from "react-native";
+import AppText from "../components/AppText";
 
 import NextButton from "../components/NextButton";
 
