@@ -14,7 +14,7 @@ function FormText({ title, subTitle }) {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 15,
+    marginTop: 20,
     marginLeft: 18,
   },
   title: {

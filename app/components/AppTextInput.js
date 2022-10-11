@@ -19,10 +19,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "90%",
     padding: 10,
-    marginVertical: 30,
+    marginTop: 30,
+    marginBottom: 20,
     marginHorizontal: 20,
   },
-  textInput: {},
+  textInput: {
+    paddingLeft: 5,
+    fontSize: 16,
+  },
 });
 
 export default AppTextInput;

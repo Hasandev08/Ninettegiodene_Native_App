@@ -1,5 +1,6 @@
 import React from "react";
 import { ImageBackground, StyleSheet, View } from "react-native";
+import { Formik } from "formik";
 
 import PreviousButton from "../components/PreviousButton";
 import FormText from "../components/FormText";
@@ -12,18 +13,35 @@ function SignUpScreen(props) {
     <>
       <PreviousButton />
       <FormText title="SignUp" subTitle="Let's explore your dream house" />
-      {/* <AppText /> */}
-      <AppTextInput placeholder="Enter your email" />
-      <ImageBackground
-        resizeMode="contain"
-        style={styles.container}
-        source={require("../assets/login.png")}
+      <Formik
+        initialValues={{ email: "" }}
+        onSubmit={(values) => console.log(values)}
       >
-        <View style={styles.buttons}>
-          <AppButton title="Next" />
-          <AppButton title="Already have an account?" color="theme" />
-        </View>
-      </ImageBackground>
+        {({ handleChange, handleSubmit }) => (
+          <>
+            <AppTextInput
+              autoCapitalize="none"
+              autoCorrect={false}
+              keyboardType="email-address"
+              onChangeText={handleChange("email")}
+              placeholder="Enter your email"
+            />
+            <AppText style={styles.textInput}>
+              You will receive a confirmation email. Click to verify
+            </AppText>
+            <ImageBackground
+              resizeMode="stretch"
+              style={styles.container}
+              source={require("../assets/login.png")}
+            >
+              <View style={styles.buttons}>
+                <AppButton title="Next" onPress={handleSubmit} />
+                <AppButton title="Already have an account?" color="theme" />
+              </View>
+            </ImageBackground>
+          </>
+        )}
+      </Formik>
     </>
   );
 }
@@ -32,14 +50,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "flex-end",
-    alignItems: "center",
     width: "100%",
     height: "100%",
+    paddingBottom: 35,
+    bottom: 0,
+    top: 60,
   },
   buttons: {
     alignItems: "center",
     width: "100%",
     marginBottom: 50,
+  },
+  textInput: {
+    marginLeft: 25,
+    fontSize: 12,
   },
 });
 

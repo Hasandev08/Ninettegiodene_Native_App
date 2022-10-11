@@ -13,7 +13,9 @@ function WelcomeScreen(props) {
       source={require("../assets/background.jpg")}
     >
       <Image style={styles.icon} source={require("../assets/logo.png")} />
-      <Text style={styles.tagline}>Let's find your{"\n"}dream house!</Text>
+      <AppText style={styles.tagline}>
+        Let's find your{"\n"}dream house!
+      </AppText>
       <NextButton />
     </ImageBackground>
   );
