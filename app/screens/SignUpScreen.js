@@ -1,12 +1,17 @@
 import React from "react";
 import { ImageBackground, StyleSheet, View } from "react-native";
 import { Formik } from "formik";
+import * as Yup from "yup";
 
 import PreviousButton from "../components/PreviousButton";
 import FormText from "../components/FormText";
 import AppText from "../components/AppText";
 import AppButton from "../components/AppButton";
-import AppTextInput from "../components/AppTextInput";
+import AppFormField from "../components/AppFormField";
+
+const validationSchema = Yup.object().shape({
+  email: Yup.string().required().email().label("Email"),
+});
 
 function SignUpScreen(props) {
   return (
@@ -16,17 +21,18 @@ function SignUpScreen(props) {
       <Formik
         initialValues={{ email: "" }}
         onSubmit={(values) => console.log(values)}
+        validationSchema={validationSchema}
       >
-        {({ handleChange, handleSubmit }) => (
+        {({ handleChange, handleSubmit, errors, setFieldTouched, touched }) => (
           <>
-            <AppTextInput
+            <AppFormField
               autoCapitalize="none"
               autoCorrect={false}
+              name="email"
               keyboardType="email-address"
-              onChangeText={handleChange("email")}
               placeholder="Enter your email"
             />
-            <AppText style={styles.textInput}>
+            <AppText style={styles.text}>
               You will receive a confirmation email. Click to verify
             </AppText>
             <ImageBackground
@@ -61,7 +67,8 @@ const styles = StyleSheet.create({
     width: "100%",
     marginBottom: 50,
   },
-  textInput: {
+  text: {
+    marginTop: 10,
     marginLeft: 25,
     fontSize: 12,
   },
