@@ -12,7 +12,7 @@ function ErrorMessage({ error, visible }) {
 const styles = StyleSheet.create({
   error: {
     color: "red",
-    paddingTop: 10,
+    paddingTop: 15,
     paddingLeft: 25,
   },
 });

@@ -4,4 +4,5 @@ export default {
   button: "#222",
   dark: "#444",
   theme: "#e0d3a7",
+  background: "f4f4f4",
 };
