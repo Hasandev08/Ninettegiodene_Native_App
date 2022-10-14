@@ -2,54 +2,50 @@ import React from 'react'
 import { ImageBackground, StyleSheet, View } from 'react-native'
 import * as Yup from 'yup'
 
+import AppForm from '../components/AppForm'
 import AppText from '../components/AppText'
 import AppButton from '../components/AppButton'
 import AppFormField from '../components/AppFormField'
 import FormText from '../components/FormText'
 import PreviousButton from '../components/PreviousButton'
 import SubmitButton from '../components/SubmitButton'
-import AppForm from '../components/AppForm'
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label('Email'),
 })
 
-function SignUpScreen(props) {
-  return (
-    <>
-      <PreviousButton />
-      <FormText title='SignUp' subTitle="Let's explore your dream house" />
-      <AppForm
-        initialValues={{ email: '' }}
-        onSubmit={(values) => console.log(values)}
-        validationSchema={validationSchema}
+const SignUpScreen = (props) => (
+  <>
+    <PreviousButton />
+    <FormText title='SignUp' subTitle="Let's explore your dream house" />
+    <AppForm
+      initialValues={{ email: '' }}
+      onSubmit={(values) => console.log(values)}
+      validationSchema={validationSchema}
+    >
+      <AppFormField
+        autoCapitalize='none'
+        autoCorrect={false}
+        name='email'
+        keyboardType='email-address'
+        placeholder='Enter your email'
+      />
+      <AppText style={styles.text}>You will receive a confirmation email. Click to verify</AppText>
+      <ImageBackground
+        resizeMode='stretch'
+        style={styles.container}
+        source={require('../assets/login.png')}
       >
-        <AppFormField
-          autoCapitalize='none'
-          autoCorrect={false}
-          name='email'
-          keyboardType='email-address'
-          placeholder='Enter your email'
-        />
-        <AppText style={styles.text}>
-          You will receive a confirmation email. Click to verify
-        </AppText>
-        <ImageBackground
-          resizeMode='stretch'
-          style={styles.container}
-          source={require('../assets/login.png')}
-        >
-          <View style={styles.dropShadow}>
-            <View style={styles.buttons}>
-              <SubmitButton title='Next' />
-              <AppButton title='Already have an account?' color='theme' />
-            </View>
+        <View style={styles.dropShadow}>
+          <View style={styles.buttons}>
+            <SubmitButton title='Next' />
+            <AppButton title='Already have an account?' color='theme' />
           </View>
-        </ImageBackground>
-      </AppForm>
-    </>
-  )
-}
+        </View>
+      </ImageBackground>
+    </AppForm>
+  </>
+)
 
 const styles = StyleSheet.create({
   container: {
