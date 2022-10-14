@@ -1,7 +1,7 @@
-import React from "react";
-import { StyleSheet, View } from "react-native";
+import React from 'react'
+import { StyleSheet, View } from 'react-native'
 
-import AppText from "./AppText";
+import AppText from './AppText'
 
 function FormText({ title, subTitle }) {
   return (
@@ -9,7 +9,7 @@ function FormText({ title, subTitle }) {
       <AppText style={styles.title}>{title}</AppText>
       <AppText style={styles.subTitle}>{subTitle}</AppText>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -19,12 +19,12 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 30,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginBottom: 5,
   },
   subTitle: {
     fontSize: 14,
   },
-});
+})
 
-export default FormText;
+export default FormText

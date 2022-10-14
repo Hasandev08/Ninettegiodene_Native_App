@@ -3,6 +3,9 @@ export default {
   white: "#fff",
   button: "#222",
   dark: "#444",
-  theme: "#e0d3a7",
-  background: "f4f4f4",
+  theme: "rgb(224, 211, 167)",
+  background: "rgb(244, 244, 244)",
+  mustard: "rgb(224, 211, 167)",
+  title: "rgb(95, 95, 95)",
+  signoutButton: "rgb(147, 156, 132)",
 };

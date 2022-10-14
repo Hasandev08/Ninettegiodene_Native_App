@@ -1,8 +1,8 @@
-import React from "react";
-import { Text } from "react-native";
+import React from 'react'
+import { Text } from 'react-native'
 
 function AppText({ children, style }) {
-  return <Text style={style}>{children}</Text>;
+  return <Text style={style}>{children}</Text>
 }
 
-export default AppText;
+export default AppText
