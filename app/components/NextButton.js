@@ -4,8 +4,8 @@ import { AntDesign } from '@expo/vector-icons'
 
 import colors from '../config/colors'
 
-const NextButton = (props) => (
-  <TouchableOpacity style={styles.button}>
+const NextButton = ({ onPress }) => (
+  <TouchableOpacity style={styles.button} onPress={onPress}>
     <AntDesign name='right' size={20} color={colors.white} />
   </TouchableOpacity>
 )

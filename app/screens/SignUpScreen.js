@@ -14,9 +14,9 @@ const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label('Email'),
 })
 
-const SignUpScreen = (props) => (
+const SignUpScreen = ({ navigation }) => (
   <>
-    <PreviousButton />
+    <PreviousButton onPress={() => navigation.navigate('Home')} />
     <FormText title='SignUp' subTitle="Let's explore your dream house" />
     <AppForm
       initialValues={{ email: '' }}
@@ -39,7 +39,11 @@ const SignUpScreen = (props) => (
         <View style={styles.dropShadow}>
           <View style={styles.buttons}>
             <SubmitButton title='Next' />
-            <AppButton title='Already have an account?' color='theme' />
+            <AppButton
+              title='Already have an account?'
+              color='theme'
+              onPress={() => navigation.navigate('Login')}
+            />
           </View>
         </View>
       </ImageBackground>

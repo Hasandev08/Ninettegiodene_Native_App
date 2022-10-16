@@ -5,9 +5,9 @@ import AppText from './AppText'
 
 import colors from '../config/colors'
 
-const SignOutButton = (props) => (
+const SignOutButton = ({ onPress }) => (
   <View style={styles.container}>
-    <TouchableOpacity style={styles.button}>
+    <TouchableOpacity style={styles.button} onPress={onPress}>
       <AppText style={{ color: colors.white, fontSize: 15 }}>Sign Out</AppText>
     </TouchableOpacity>
   </View>
@@ -16,7 +16,7 @@ const SignOutButton = (props) => (
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    marginVertical: 50,
+    marginVertical: 40,
   },
   button: {
     width: '40%',

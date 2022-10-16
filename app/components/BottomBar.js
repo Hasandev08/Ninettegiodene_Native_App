@@ -1,9 +1,6 @@
 import React from 'react'
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
-import { Octicons } from '@expo/vector-icons'
-import { Fontisto } from '@expo/vector-icons'
-import { AntDesign } from '@expo/vector-icons'
-import { Feather } from '@expo/vector-icons'
+import { AntDesign, Feather, Fontisto, Octicons } from '@expo/vector-icons'
 
 import colors from '../config/colors'
 

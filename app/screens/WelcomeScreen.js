@@ -6,11 +6,11 @@ import NextButton from '../components/NextButton'
 
 import colors from '../config/colors'
 
-const WelcomeScreen = (props) => (
+const WelcomeScreen = ({ navigation }) => (
   <ImageBackground style={styles.background} source={require('../assets/background.jpg')}>
     <Image style={styles.icon} source={require('../assets/logo.png')} />
     <AppText style={styles.tagline}>Let's find your{'\n'}dream house!</AppText>
-    <NextButton />
+    <NextButton onPress={() => navigation.navigate('Signup')} />
   </ImageBackground>
 )
 
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   icon: {
     width: 230,
     height: 230,
-    marginTop: 20,
+    marginTop: 40,
   },
   tagline: {
     color: colors.dark,

@@ -10,7 +10,7 @@ import { Feather, AntDesign, Entypo } from '@expo/vector-icons'
 
 import colors from '../config/colors'
 
-const AccountScreen = (props) => (
+const AccountScreen = ({ navigation }) => (
   <View style={styles.background}>
     <Profile />
     <Card
@@ -33,7 +33,7 @@ const AccountScreen = (props) => (
       title='My Ads'
       subTitle='See the Home you have added for sale'
     />
-    <SignOutButton />
+    <SignOutButton onPress={() => navigation.navigate('Home')} />
     <BottomBar />
   </View>
 )

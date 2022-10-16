@@ -13,13 +13,13 @@ const validationSchema = Yup.object().shape({
   password: Yup.string().required().min(4).label('Password'),
 })
 
-const LoginScreen = (props) => (
+const LoginScreen = ({ navigation }) => (
   <>
-    <PreviousButton />
+    <PreviousButton onPress={() => navigation.navigate('Signup')} />
     <FormText title='Login' subTitle="Let's explore your dream house" />
     <AppForm
       initialValues={{ email: '', password: '' }}
-      onSubmit={(values) => console.log(values)}
+      onSubmit={() => navigation.navigate('Account')}
       validationSchema={validationSchema}
     >
       <AppFormField
